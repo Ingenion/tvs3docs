@@ -17,7 +17,6 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
-    "sphinx_multiversion",
 ]
 
 autoclass_content = 'both'
@@ -34,14 +33,3 @@ html_theme = 'furo'
 html_static_path = ['_static']
 
 html_favicon = "_static/favicon.ico"
-
-html_sidebars = {
-    "**": [
-        "sidebar/brand.html",
-        "sidebar/search.html",
-        "sidebar/scroll-start.html",
-        "sidebar/navigation.html",
-        "sidebar/versions.html",
-        "sidebar/scroll-end.html",
-    ],
-}
