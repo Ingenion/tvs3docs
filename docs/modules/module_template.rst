@@ -1,5 +1,5 @@
-Module Type 1 Template
-======================
+Module Template
+===============
 
 Board Outline
 -------------
