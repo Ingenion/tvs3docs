@@ -12,6 +12,5 @@ Modules
    can
    ethernet
    spacefibre
-   module_type1_template
-   module_type2_template
-   
+   module_template
+
