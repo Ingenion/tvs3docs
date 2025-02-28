@@ -5,18 +5,15 @@
 
 TVS 3.0 Documentation
 =====================
-
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+The Total Verification System is not just a fully programmable piece of test equipment.  It is a system composed of libraries of code that makes electrical design verification more efficient by leveraging code reuse from the drawing board to the final product.
 
 .. toctree::
    :maxdepth: 1
    :numbered: 2
 
+   concept.rst
    overview/index.rst
    mainframe/index.rst
    modules/index.rst
-   
+
 

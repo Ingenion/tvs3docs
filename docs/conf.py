@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'TVS 3.0 Documentation'
+project = 'TVS 3.0'
 copyright = '2025, Ingenion, LLC'
 author = 'Ingenion, LLC'
 
