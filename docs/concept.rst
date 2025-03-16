@@ -5,19 +5,19 @@ Concept
 
 What is a *Total Verification System*?
 
-When testing an electronics design's functionality, the interfaces of the design are the points where the test bench communicate with the design under test, DUT.
+When testing an electronics design's functionality, the interfaces of the design are the points where the test bench communicates with the design under test, DUT.
 
-<insert diagram showing DUT, input interfaces, and output interfaces>
+.. list-table::
+   :widths: 200 200
 
-As shown in the diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
+   * - .. image:: ../images/concept-basic-tb.png
+     - As shown in the diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
 
 The TVS provides a programmable platform where the low-level interfaces are implemented in hardware, but the high-level test sequences are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.
 
 What makes the TVS different from other equipment is that test bench development starts in the simulation world. The low-level interface blocks are implemented in programmable logic which becomes part of the simulation.   The high-level test bench is a combination of pre-existing software libraries and user-developed software that is customized for the design's requirements.
 
 Everything developed in the simulation environment gets reused during card-level testing.  This portability between simulation and lab testing accelerates development and reduces cost.  Issues found in the lab can be easily recreated in simulation where observability is much greater, allowing issues to be addressed more efficiently.
-
-<describe the concept of the TVS and explain why total, verification, and system are part of the name>
 
 Its programmability makes it well suited for use in simulation, card testing, box testing, and prototyping/emulation. 
 
