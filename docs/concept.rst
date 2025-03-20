@@ -11,9 +11,12 @@ When testing an electronics design's functionality, the interfaces of the design
    :widths: 200 200
 
    * - .. image:: ../images/concept-basic-tb.png
-     - As shown in the diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
+     - As shown in this simplified diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
 
-The TVS provides a programmable platform where the low-level interfaces are implemented in hardware, but the high-level test sequences are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.
+The TVS provides a programmable platform where the low-level interfaces are implemented in hardware, but the high-level test sequences are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.  The diagram below illustrates this layered test bench approach.
+
+.. image:: ../images/concept-layered-tb.png
+  :align: center
 
 What makes the TVS different from other equipment is that test bench development starts in the simulation world. The low-level interface blocks are implemented in programmable logic which becomes part of the simulation.   The high-level test bench is a combination of pre-existing software libraries and user-developed software that is customized for the design's requirements.
 
