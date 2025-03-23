@@ -33,11 +33,14 @@ Verifying designs with the TVS begins with simulation.  As shown below, the high
 
 Digital simulation tools (eg, QuestaSim, Riviera Pro) are used to simulate the DUT's :abbr:`RTL (Register Transfer Level)` along with Ingenion-provided simulation models of the lower-level TVS hardware.  The test harness which connects the TVS to the DUT is also part of the simulation.  Along with the DUT's HDL, the user is encouraged to generate and use simulation models of other components in their DUT (eg, :abbr:`SRAM (Static Random Access Memory)` devices, I/O devices, :abbr:`ADC (Analog to Digital Conversion)`/:abbr:`DAC (Digital to Analog Conversion)` devices, etc).  Increasing the fidelity of the simulation increases the potential to find bugs earlier in the design flow.
 
+Card-Level Lab Testing
+----------------------
+The test bench for card-level testing in the electronics lab looks like the Layered Test Bench diagram above.  The abstraction layer is recompiled/refactored to allow the same suite of tests developed in simulation to communicate with the actual TVS hardware and DUT.  For Ingenion-provided TVS FPGA designs, the FPGA's configuration file is provided by Ingenion.  When users develop their own TVS FPGA designs, they must implement their TVS RTL to produce a configuration file prior to card testing with the DUT.
+
+Developing the test suite during simulation instead the lab environment is optional, but has many advantages that should not be overlooked.  For example, bugs found in the lab environment can usually be easily recreated in simulation and fixed in an environment that is designed for debugging.
+
 PyUVM
 ----------
-
-Card Testing
-------------
 
 Box Testing 
 -----------
