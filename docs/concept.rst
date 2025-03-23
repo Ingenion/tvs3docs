@@ -41,6 +41,12 @@ Developing the test suite during simulation instead the lab environment is optio
 
 PyUVM
 ----------
+:abbr:`UVM (Universal Verification Methodology)` is an approach to architecting test benches that has become widely accepted and adopted in the verification of digital designs.  SystemVerilog is one language that is commonly used to implement a UVM test bench.  However, SystemVerilog is not well suited for running tests in the lab environment, whereas Python is.  PyUVM is a Python package that implements UVM in Python.  It brings the power of UVM to the TVS and the TVS brings portability between simulation and lab testing.  Together, PyUVM and the TVS bring UVM into the lab testing environment.
+
+The diagram below shows how the TVS maps to a typical PyUVM test bench.  The abstraction layer is provided by Ingenion and makes use of CocoTB to allow Python to communicate with the simulator tool's :abbr:`PLI (Programming Language Interface)` .
+
+.. image:: ../images/concept/pyuvm-tb.png
+  :align: center
 
 Box Testing 
 -----------
