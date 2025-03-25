@@ -48,8 +48,12 @@ The diagram below shows how the TVS maps to a typical PyUVM test bench.  The abs
 .. image:: ../images/concept/pyuvm-tb.png
   :align: center
 
-Box Testing 
------------
+Box-Level Testing 
+-----------------
+When it's time to integrate the card-level DUT into its subsystem (box), card-to-card interfaces will be connected to other cards, however, you can reuse the TVS hardware to continue driving the box-to-box interfaces.  In addition, box-level test software can continue to use libraries developed for card-level testing.  The diagram below shows the box-level reuse concept.
+
+.. image:: ../images/concept/box-tb.png
+  :align: center
 
 Prototyping and Emulation
 -------------------------
