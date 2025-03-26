@@ -72,12 +72,12 @@ In the second diagram, the DUT is implemented in the TVS FPGA by itself, allowin
    :widths: 5 20 200
    :header-rows: 0
 
-   * - T
+   * - **T**
      - **total**
      - *test bench development and use is involved from simulation, to card-testing, to system/sub-system testing*
-   * - V
+   * - **V**
      - **verification**
      - *focused on design testing*
-   * - S
+   * - **S**
      - **system**
      - *hardware interfaces, user-programmable FPGA, libraries of software*
