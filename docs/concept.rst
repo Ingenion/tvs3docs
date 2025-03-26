@@ -35,7 +35,7 @@ Digital simulation tools (eg, QuestaSim, Riviera Pro) are used to simulate the D
 
 Card-Level Lab Testing
 ----------------------
-The test bench for card-level testing in the electronics lab looks like the Layered Test Bench diagram above.  The abstraction layer is recompiled/refactored to allow the same suite of tests developed in simulation to communicate with the actual TVS hardware and DUT.  For Ingenion-provided TVS FPGA designs, the FPGA's configuration file is provided by Ingenion.  When users develop their own TVS FPGA designs, they must implement their TVS RTL to produce a configuration file prior to card testing with the DUT.
+The test bench for card-level testing in the electronics lab looks like the Layered Test Bench diagram above.  The abstraction layer is recompiled/refactored to allow the same suite of tests developed in simulation to communicate with the actual TVS hardware and DUT.  For Ingenion-provided TVS :abbr:`FPGA (Field Programmable Gate Array)` designs, the FPGA's configuration file is provided by Ingenion.  When users develop their own TVS FPGA designs, they must implement their TVS RTL to produce a configuration file prior to card testing with the DUT.
 
 Developing the test suite during simulation instead the lab environment is optional, but has many advantages that should not be overlooked.  For example, bugs found in the lab environment can usually be easily recreated in simulation and fixed in an environment that is designed for debugging.
 
@@ -57,14 +57,28 @@ When it's time to integrate the card-level DUT into its subsystem (box), card-to
 
 Prototyping and Emulation
 -------------------------
+Given that the TVS hardware provides a variety of I/O standards and contains a sizable FPGA that can be programmed by the user, it is also useful as a prototyping/emulation platform during DUT development.  The diagram below shows two ways in which the user's digital design can be targetted to the TVS FPGA, allowing the TVS to implement the functionality of the DUT.
+
+In the first diagram, the DUT is implemented in the TVS FPGA along with the testbench, allowing tests to run in real time which is orders of magnitude faster than simulation time.
+
+In the second diagram, the DUT is implemented in the TVS FPGA by itself, allowing it to be used as a DUT emulator for proof-of-concept demonstrations or to reduce project costs when many developers need their own copy of the DUT.
+
+.. image:: ../images/concept/dut-emulation.png
+  :align: center
+
+
+
 
 .. list-table:: 
-   :widths: 20 200
+   :widths: 5 20 200
    :header-rows: 0
 
-   * - **Total**
+   * - T
+     - **total**
      - *test bench development and use is involved from simulation, to card-testing, to system/sub-system testing*
-   * - **Verification**
+   * - V
+     - **verification**
      - *focused on design testing*
-   * - **System**
+   * - S
+     - **system**
      - *hardware interfaces, user-programmable FPGA, libraries of software*
