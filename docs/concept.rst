@@ -66,8 +66,7 @@ In the second diagram, the DUT is implemented in the TVS FPGA by itself, allowin
 .. image:: ../images/concept/dut-emulation.png
   :align: center
 
-
-
+----
 
 .. list-table:: 
    :widths: 5 20 200
