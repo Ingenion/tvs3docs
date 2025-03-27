@@ -1,3 +1,5 @@
+.. _module_template:
+
 Module Template
 ===============
 

@@ -55,6 +55,8 @@ When it's time to integrate the card-level DUT into its subsystem (box), card-to
 .. image:: ../images/concept/box-tb.png
   :align: center
 
+.. _emulation:
+
 Prototyping and Emulation
 -------------------------
 Given that the TVS hardware provides a variety of I/O standards and contains a sizable FPGA that can be programmed by the user, it is also useful as a prototyping/emulation platform during DUT development.  The diagram below shows two ways in which the user's digital design can be targetted to the TVS FPGA, allowing the TVS to implement the functionality of the DUT.
