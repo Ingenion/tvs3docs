@@ -7,11 +7,9 @@ What is a *Total Verification System*?
 
 When testing an electronics design's functionality, the interfaces of the design are the points where the test bench communicates with the :abbr:`DUT (Device Under Test)`.
 
-.. list-table::
-   :widths: 200 200
-
    * - .. image:: ../images/concept/basic-tb.png
-     - As shown in this simplified diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
+  
+  As shown in this simplified diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
 
 The TVS provides a programmable platform where the low-level interfaces (:abbr:`I/O (Input/Output)` components, protocol logic, buffers) are implemented in hardware, but the high-level tests, sequences, and :abbr:`API (Application Programming Interface)` /Drivers are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.  The diagram below illustrates this layered test bench approach with a loose mapping to the familiar :abbr:`OSI (Open Systems Interconnection)` model.
 
@@ -40,7 +38,9 @@ The test bench for card-level testing in the electronics lab looks like the Laye
 Developing the test suite during simulation instead the lab environment is optional, but has many advantages that should not be overlooked.  For example, bugs found in the lab environment can usually be easily recreated in simulation and fixed in an environment that is designed for debugging.
 
 PyUVM
-----------
+-----
+.. TODO: Add link to PyUVM and CocoTB URL
+
 :abbr:`UVM (Universal Verification Methodology)` is an approach to architecting test benches that has become widely accepted and adopted in the verification of digital designs.  SystemVerilog is one language that is commonly used to implement a UVM test bench.  However, SystemVerilog is not well suited for running tests in the lab environment, whereas Python is.  PyUVM is a Python package that implements UVM in Python.  It brings the power of UVM to the TVS and the TVS brings portability between simulation and lab testing.  **Together, PyUVM and the TVS bring UVM into the lab testing environment**.
 
 The diagram below shows how the TVS maps to a typical PyUVM test bench.  The abstraction layer is provided by Ingenion and makes use of CocoTB to allow Python to communicate with the simulator tool's :abbr:`PLI (Programming Language Interface)` .
@@ -51,6 +51,8 @@ The diagram below shows how the TVS maps to a typical PyUVM test bench.  The abs
 Box-Level Testing 
 -----------------
 When it's time to integrate the card-level DUT into its subsystem (box), card-to-card interfaces will be connected to other cards, however, you can reuse the TVS hardware to continue driving the box-to-box interfaces.  In addition, box-level test software can continue to use libraries developed for card-level testing.  The diagram below shows the box-level reuse concept.
+
+.. TODO: Change diagram so that Box is 3D
 
 .. image:: ../images/concept/box-tb.png
   :align: center
@@ -65,10 +67,14 @@ In the first diagram, the DUT is implemented in the TVS FPGA along with the test
 
 In the second diagram, the DUT is implemented in the TVS FPGA by itself, allowing it to be used as a DUT emulator for proof-of-concept demonstrations or to reduce project costs when many developers need their own copy of the DUT.
 
+.. TODO: Change image to show DUT Logic.  For emulation, add orange box in green box
+
 .. image:: ../images/concept/dut-emulation.png
   :align: center
 
 ----
+
+.. TODO: Move this to top (after what is a TVS)
 
 .. list-table:: 
    :widths: 5 20 200
