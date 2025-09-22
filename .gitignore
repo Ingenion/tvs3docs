@@ -3,3 +3,4 @@ __pycache__
 _build/
 images/.$tvs3diagrams.drawio.bkp
 images/use_cases/.$uses-cases.drawio.bkp
+*.bkp
