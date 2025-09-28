@@ -5,6 +5,23 @@ The following diagram shows an overview of the TVS 3.0 feature set.
 .. figure:: ../../images/feature_set/feature-set.png
   :align: center
 
+Mainframe
+---------
+The TVS 3.0 mainframe provides the following features shown in the diagram above.
+ * FPGA: Opal Kelly XEM8310-AU25P (AMD Artix UltraScale+ XCAU25P-2FFVB676E)
+ * Modules: 5 module slots (4 Type 1, 1 Type 2) for customizing IO and functionality
+ * Touchscreen: 10.4" QLED Quantum Dot Display, Capacitive Touch, High Brightness, wide-screen 1600×720 resolution, stereo speakers
+ * Processing and display driver: Raspberry Pi-5 module (4GB RAM, 64-bit quad-core ARM Cortex-A76 CPU, VideoCore VII GPU)
+ * Connectivity
+
+   - Raspberry Pi - Gigabit Ethernet, WiFi 6E, Bluetooth 5.0, USB 3.0
+
+   - FPGA - SFP+ cage for multi-Gbps Ethernet or optical communication, USB-C for JTAG, USB-C for programming and communication
+
+ * Power: +12V DC input, +3.3V and +12V power to modules, IO voltage power to modules (1.8V, 2.5V, 3.3V, 5V)
+ * Cooling: Active cooling with a high-quality fan and heatsink
+ * FPGA I/O: 24 GPIO bidirection single-ended lines to each of 5 module slots, 8 full duplex GTX interfaces to slot 5, 2 unique GPIO lines to the Pi-5, 2 shared GPIO lines to the Pi-5, 1 shared I2C bus between slots 1-3 and another shared I2C bus between slots 4-5
+
 TVS FPGA (XEM8310-AU25P)
 ------------------------
 The TVS 3.0 contains an Opal Kelly XEM8310-AU25P FPGA board which employs an AMD Artix UltraScale+
@@ -40,7 +57,7 @@ The TVS 3.0 mainframe accepts two types of modules.
 
 Touchscreen
 -----------
-The TVS 3.0 sports a 10.4" QLED Quantum Dot Display, Capacitive Touch, High Brightness touchscreen with a resolution of 1600×720.  Internally, touchscreen connects to the Raspberry Pi-5 module via HDMI (for video and audio) and USB (for touch input).  The touchscreen allows the Pi-5 to be used as a standalone system without the need for an external monitor, keyboard, or mouse. 
+The TVS 3.0 sports a 10.4" QLED Quantum Dot Display, Capacitive Touch, High Brightness touchscreen with a resolution of 1600×720.  Internally, the touchscreen connects to the Raspberry Pi-5 module via HDMI (for video and audio) and USB (for touch input).  The touchscreen allows the Pi-5 to be used as a standalone system without the need for an external monitor, keyboard, or mouse.  The touchscreen also provides stereo speakers for audio output.
 
 Raspberry Pi-5
 --------------
@@ -48,5 +65,6 @@ Combined with the touchscreen, the Rasberry Pi-5 module provides a familiar and 
 
 Externally, the Pi-5 module also provides a Gigabit Ethernet port, WiFi 6E, Bluetooth 5.0, and USB 3.0 connectivity.
 
-The Pi-5 module can be used to run high-level applications, provide network connectivity, and interface with the FPGA for control and data processing.
+The Pi-5 module runs a 64-bit operating system such as Raspberry Pi OS or Ubuntu.  It can be programmed in a variety of languages including Python, C/C++, and others.
 
+The Pi-5 module can be used to run high-level applications, provide network connectivity, and interface with the FPGA for control and data processing.
