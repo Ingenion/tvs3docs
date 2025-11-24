@@ -29,44 +29,6 @@ I/O
 ---
 The following spreadsheet provides the mapping of the FPGA I/O to the various connectors and peripherals in the TVS 3.0 mainframe.  Use this spreadsheet as a reference when designing your own FPGA configuration for the TVS 3.0.
 
-See the :download:`project report <../_static/MC1.xlsx>`.
-
-.. Not sure if the table below is of any use.
-  +--------------+-------------------------+---------+-----+---------------------------------------+
-  | FPGA Pin Num | FPGA Pin Name           | IO Bank | VIO | Destination                           |
-  +==============+=========================+=========+=====+=======================================+
-  | AD24         | IO_L5P_T0U_N8_AD14P_64  | 64      | 3   | Module 1 pin 23                       |
-  +--------------+-------------------------+---------+-----+---------------------------------------+
-
-
-
-.. Not sure if the table below is of any use.
-  +----------------------+-------------------------------+-------------------------------+
-  | FPGA I/O Name        | Description                   | Location                      |
-  +======================+===============================+===============================+
-  | GPIO[0:23]           | Bidirectional single-ended    | Module Slots 1-5 (24 lines    |
-  |                      | GPIO lines                    | per slot)                     |
-  +----------------------+-------------------------------+-------------------------------+
-  | GTX[0:7]             | Full duplex high-speed serial | Module Slot 5 (8 lanes)       |
-  |                      | transceivers                  |                               |
-  +----------------------+-------------------------------+-------------------------------+
-  | I2C_SCL_1, I2C_SDA_1 | Shared I2C bus                | Module Slots 1-3              |
-  +----------------------+-------------------------------+-------------------------------+
-  | I2C_SCL_2, I2C_SDA_2 | Shared I2C bus                | Module Slots 4-5              |
-  +----------------------+-------------------------------+-------------------------------+
-  | GPIO_PI_UNIQ[0:1]    | Unique GPIO lines to Pi-5     | Module Slots 1-5              |
-  +----------------------+-------------------------------+-------------------------------+
-  | GPIO_PI_SHARED[0:1]  | Shared GPIO lines to Pi-5     | Module Slots 1-5              |
-  +----------------------+-------------------------------+-------------------------------+
-  | SFP+ TX/RX Lanes     | High-speed serial transceivers| SFP+ Cage                     |
-  +----------------------+-------------------------------+-------------------------------+
-  | JTAG_TCK, TMS, TDI,  | JTAG programming and debug    | JTAG USB-C Connector          |
-  | TDO                  | interface                     |                               |
-  +----------------------+-------------------------------+-------------------------------+
-  | USB3_DP, USB3_DM     | USB 3.0 programming and       | USB-C Programming Connector   |
-  |                      | communication interface       |                               |
-  +----------------------+-------------------------------+-------------------------------+
-  | SPI Flash Interface  | SPI flash memory interface    | Onboard SPI Flash Memory      |
-  +----------------------+-------------------------------+-------------------------------+
+Excel format: :download:`TVS 3.0 IO Planning Spreadsheet <../_static/tvs3_io_planning.xlsx>`.
 
 
