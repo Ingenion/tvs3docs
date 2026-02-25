@@ -37,15 +37,5 @@ This module provides Ethernet PHY and RJ45 connectors for 10/100/1000 Mbps Ether
 SpaceFibre I/O Module 
 ---------------------
 This module provides SpaceFibre-compliant connectors and transceivers for high-speed serial communication.  The module supports data rates up to 6.25 Gbps and is ideal for space applications requiring high-bandwidth and low-latency communication.
-
-Module Template 
----------------
-Ingenion provides free module templates (electrical and mechanical) to assist users in creating their own custom modules for the TVS 3.0 mainframe.  The templates include schematics, PCB layouts, and 3D models to facilitate the design and fabrication of custom modules.
-  * Electrical Template: :download:`Download <https://www.ingenion.com/wp-content/uploads/2024/06/TVS3_Module_Template_Electrical.zip>` - pending release
-  * Mechanical Template: :download:`Download <https://www.ingenion.com/wp-content/uploads/2024/06/TVS3_Module_Template_Mechanical.zip>` - pending release
-  * Example Module Design: :download:`Download <https://www.ingenion.com/wp-content/uploads/2024/06/TVS3_Module_Example_Design.zip>` - pending release
-
-Customers can contact Ingenion for assistance in designing and fabricating custom modules tailored to their specific application requirements.  Ingenion also offers a module design service where customers can provide their specifications and Ingenion will handle the design and fabrication of the custom module.
-  * Contact: https://www.ingenion.com/contact/
   
  

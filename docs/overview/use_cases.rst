@@ -11,7 +11,7 @@ For complex digital cores that are developed in-house, running thorough test ben
 
 Card-Level Development and Verification
 ---------------------------------------
-In this use-case, the TVS 3.0 interfaces to the DUT as shown in the diagram below.  The modules used in the TVS mainframe are selected to support the needs of the DUT.  The TVS FPGA implements the protocols of the DUT's interfaces.  The test scripts, which run on either a host computer, the built-in Pi-5, or a soft-CPU in the TVS FPGA, verify that the DUT meets its design requirements and operates properly under all scenarios, normal and anomolous.
+In this use-case, the TVS 3.0 interfaces to the DUT as shown in the diagram below.  The modules used in the TVS mainframe are selected to support the needs of the DUT.  The TVS FPGA implements the protocols of the DUT's interfaces.  The test scripts, which run on either a host computer, the built-in RPi5, or a soft-CPU in the TVS FPGA, verify that the DUT meets its design requirements and operates properly under all scenarios, normal and anomolous.
 
 .. image:: ../../images/use_cases/card-level-verification.png
   :align: center

@@ -7,9 +7,10 @@ What is a *Total Verification System*?
 
 When testing an electronics design's functionality, the interfaces of the design are the points where the test bench communicates with the :abbr:`DUT (Device Under Test)`.
 
-   * - .. image:: ../images/concept/basic-tb.png
+.. image:: ../images/concept/basic-tb.png
+  :align: center
   
-  As shown in this simplified diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
+As shown in this simplified diagram, the test bench stimulates the DUT's input interfaces and monitors the DUT's output interfaces.  The functionality implemented by the DUT is reflected in the DUT's output interfaces.
 
 The TVS provides a programmable platform where the low-level interfaces (:abbr:`I/O (Input/Output)` components, protocol logic, buffers) are implemented in hardware, but the high-level tests, sequences, and :abbr:`API (Application Programming Interface)` /Drivers are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.  The diagram below illustrates this layered test bench approach with a loose mapping to the familiar :abbr:`OSI (Open Systems Interconnection)` model.
 
