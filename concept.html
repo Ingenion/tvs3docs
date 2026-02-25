@@ -1,0 +1,406 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="2. Overview" href="overview/index.html"><link rel="prev" title="TVS 3.0 Documentation" href="index.html">
+
+    <link rel="shortcut icon" href="_static/favicon.ico"><!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>1. Concept - TVS 3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">TVS 3.0  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">TVS 3.0  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">1. Concept</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="overview/index.html">2. Overview</a><input aria-label="Toggle navigation of 2. Overview" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/product_sheet.html">2.1. Product Sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/use_cases.html">2.2. The Use-Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/feature_set.html">2.3. Feature Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/module_set.html">2.4. Module Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="mainframe/index.html">3. Mainframe</a><input aria-label="Toggle navigation of 3. Mainframe" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/pwr_mass_size.html">3.1. Power, Mass, Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/tvs_fpga.html">3.2. XEM8310-A25U</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/modules.html">3.3. Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/touchscreen.html">3.4. Touchscreen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/pi_5.html">3.5. Raspberry Pi-5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainframe/interfaces.html">3.6. Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules/index.html">4. Modules</a><input aria-label="Toggle navigation of 4. Modules" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/spacewire.html">4.1. SpaceWire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/lvds.html">4.2. LVDS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/rs422.html">4.3. RS-422</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/rs485.html">4.4. RS-485</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/lvttl.html">4.5. LVTTL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/can.html">4.6. CAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/analog_in.html">4.7. Analog Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/analog_out.html">4.8. Analog Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ethernet.html">4.9. Gigabit Ethernet Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/spacefibre.html">4.10. SpaceFibre Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/module_template.html">4.11. Module Template</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/concept.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="concept">
+<span id="tvs-concept"></span><h1><span class="section-number">1. </span>Concept<a class="headerlink" href="#concept" title="Link to this heading">¶</a></h1>
+<p>What is a <em>Total Verification System</em>?</p>
+<p>When testing an electronics design’s functionality, the interfaces of the design are the points where the test bench communicates with the <abbr title="Device Under Test">DUT</abbr>.</p>
+<img alt="_images/basic-tb.png" class="align-center" src="_images/basic-tb.png" />
+<p>As shown in this simplified diagram, the test bench stimulates the DUT’s input interfaces and monitors the DUT’s output interfaces.  The functionality implemented by the DUT is reflected in the DUT’s output interfaces.</p>
+<p>The TVS provides a programmable platform where the low-level interfaces (<abbr title="Input/Output">I/O</abbr> components, protocol logic, buffers) are implemented in hardware, but the high-level tests, sequences, and <abbr title="Application Programming Interface">API</abbr> /Drivers are implemented in software.  This approach allows the low-level interfaces to remain simple, powerful, and performant whereas the high-level test sequences are flexible, intelligent, and application-specific.  The diagram below illustrates this layered test bench approach with a loose mapping to the familiar <abbr title="Open Systems Interconnection">OSI</abbr> model.</p>
+<img alt="_images/layered-tb.png" class="align-center" src="_images/layered-tb.png" />
+<p>What makes the TVS different from other equipment is that test bench development starts in the world of simulation. The low-level interface blocks are implemented in programmable logic which becomes part of the simulation.  The high-level test bench is a combination of pre-existing software libraries and user-developed software that is customized for the design’s requirements.</p>
+<p>Everything developed in the simulation environment can be reused during card-level testing.  This portability between simulation and lab testing accelerates development and reduces cost.  Issues found in the lab can be easily recreated in simulation where observability is much greater, allowing issues to be addressed more efficiently.</p>
+<p>Its programmability makes it well suited for use in simulation, card testing, box testing, and prototyping/emulation.</p>
+<section id="simulation">
+<h2><span class="section-number">1.1. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">¶</a></h2>
+<p>Verifying designs with the TVS begins with simulation.  As shown below, the high-level tests communicate with your simulator tool using an abstraction layer provided by Ingenion that connects them to the low-level simulation models of the TVS hardware.</p>
+<img alt="_images/simulation-tb.png" class="align-center" src="_images/simulation-tb.png" />
+<p>Digital simulation tools (eg, QuestaSim, Riviera Pro) are used to simulate the DUT’s <abbr title="Register Transfer Level">RTL</abbr> along with Ingenion-provided simulation models of the lower-level TVS hardware.  The test harness which connects the TVS to the DUT is also part of the simulation.  Along with the DUT’s HDL, the user is encouraged to generate and use simulation models of other components in their DUT (eg, <abbr title="Static Random Access Memory">SRAM</abbr> devices, I/O devices, <abbr title="Analog to Digital Conversion">ADC</abbr>/<abbr title="Digital to Analog Conversion">DAC</abbr> devices, etc).  Increasing the fidelity of the simulation increases the potential to find bugs earlier in the design flow.</p>
+</section>
+<section id="card-level-lab-testing">
+<h2><span class="section-number">1.2. </span>Card-Level Lab Testing<a class="headerlink" href="#card-level-lab-testing" title="Link to this heading">¶</a></h2>
+<p>The test bench for card-level testing in the electronics lab looks like the Layered Test Bench diagram above.  The abstraction layer is recompiled/refactored to allow the same suite of tests developed in simulation to communicate with the actual TVS hardware and DUT.  For Ingenion-provided TVS <abbr title="Field Programmable Gate Array">FPGA</abbr> designs, the FPGA’s configuration file is provided by Ingenion.  When users develop their own TVS FPGA designs, they must implement their TVS RTL to produce a configuration file prior to card testing with the DUT.</p>
+<p>Developing the test suite during simulation instead the lab environment is optional, but has many advantages that should not be overlooked.  For example, bugs found in the lab environment can usually be easily recreated in simulation and fixed in an environment that is designed for debugging.</p>
+</section>
+<section id="pyuvm">
+<h2><span class="section-number">1.3. </span>PyUVM<a class="headerlink" href="#pyuvm" title="Link to this heading">¶</a></h2>
+<p><abbr title="Universal Verification Methodology">UVM</abbr> is an approach to architecting test benches that has become widely accepted and adopted in the verification of digital designs.  SystemVerilog is one language that is commonly used to implement a UVM test bench.  However, SystemVerilog is not well suited for running tests in the lab environment, whereas Python is.  PyUVM is a Python package that implements UVM in Python.  It brings the power of UVM to the TVS and the TVS brings portability between simulation and lab testing.  <strong>Together, PyUVM and the TVS bring UVM into the lab testing environment</strong>.</p>
+<p>The diagram below shows how the TVS maps to a typical PyUVM test bench.  The abstraction layer is provided by Ingenion and makes use of CocoTB to allow Python to communicate with the simulator tool’s <abbr title="Programming Language Interface">PLI</abbr> .</p>
+<img alt="_images/pyuvm-tb.png" class="align-center" src="_images/pyuvm-tb.png" />
+</section>
+<section id="box-level-testing">
+<h2><span class="section-number">1.4. </span>Box-Level Testing<a class="headerlink" href="#box-level-testing" title="Link to this heading">¶</a></h2>
+<p>When it’s time to integrate the card-level DUT into its subsystem (box), card-to-card interfaces will be connected to other cards, however, you can reuse the TVS hardware to continue driving the box-to-box interfaces.  In addition, box-level test software can continue to use libraries developed for card-level testing.  The diagram below shows the box-level reuse concept.</p>
+<img alt="_images/box-tb.png" class="align-center" src="_images/box-tb.png" />
+</section>
+<section id="prototyping-and-emulation">
+<span id="emulation"></span><h2><span class="section-number">1.5. </span>Prototyping and Emulation<a class="headerlink" href="#prototyping-and-emulation" title="Link to this heading">¶</a></h2>
+<p>Given that the TVS hardware provides a variety of I/O standards and contains a sizable FPGA that can be programmed by the user, it is also useful as a prototyping/emulation platform during DUT development.  The diagram below shows two ways in which the user’s digital design can be targetted to the TVS FPGA, allowing the TVS to implement the functionality of the DUT.</p>
+<p>In the first diagram, the DUT is implemented in the TVS FPGA along with the testbench, allowing tests to run in real time which is orders of magnitude faster than simulation time.</p>
+<p>In the second diagram, the DUT is implemented in the TVS FPGA by itself, allowing it to be used as a DUT emulator for proof-of-concept demonstrations or to reduce project costs when many developers need their own copy of the DUT.</p>
+<img alt="_images/dut-emulation.png" class="align-center" src="_images/dut-emulation.png" />
+<hr class="docutils" />
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2.2%" />
+<col style="width: 8.9%" />
+<col style="width: 88.9%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>T</strong></p></td>
+<td><p><strong>total</strong></p></td>
+<td><p><em>test bench development and use is involved from simulation, to card-testing, to system/sub-system testing</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>V</strong></p></td>
+<td><p><strong>verification</strong></p></td>
+<td><p><em>focused on design testing</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>S</strong></p></td>
+<td><p><strong>system</strong></p></td>
+<td><p><em>hardware interfaces, user-programmable FPGA, libraries of software</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="overview/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">2. </span>Overview</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Ingenion, LLC
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">1. Concept</a><ul>
+<li><a class="reference internal" href="#simulation">1.1. Simulation</a></li>
+<li><a class="reference internal" href="#card-level-lab-testing">1.2. Card-Level Lab Testing</a></li>
+<li><a class="reference internal" href="#pyuvm">1.3. PyUVM</a></li>
+<li><a class="reference internal" href="#box-level-testing">1.4. Box-Level Testing</a></li>
+<li><a class="reference internal" href="#prototyping-and-emulation">1.5. Prototyping and Emulation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>
